@@ -2,7 +2,8 @@
 A sample maven project that make use of marklogic-module-deployer maven plugin.
 
 # How to use the marklogic-module-deployer plugin in your maven project.
-To use the [marklogic-module-deployer] (https://github.com/sanjuthomas/marklogic-module-deployer) to your local machine and install the artificat into your maven repository.
+To use the [marklogic-module-deployer] (https://github.com/sanjuthomas/marklogic-module-deployer), clone marklogic-module-deployer from [github] (https://github.com/sanjuthomas/marklogic-module-deployer)to your local machine and install the artificat into your maven repository.
+
 add the following to your pom.xml
 
 ````
