@@ -9,6 +9,12 @@ import com.fasterxml.jackson.databind.JsonNode;
  */
 public interface QueryClient {
 
+	/**
+	 * Query by property and apply transform on the way out.
+	 *
+	 * @param id
+	 * @return
+	 */
 	JsonNode findById(String id);
 
 }
