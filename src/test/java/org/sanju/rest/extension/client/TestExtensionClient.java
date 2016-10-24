@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.Before;
-import org.junit.Test;
 
 import junit.framework.Assert;
 
@@ -22,12 +21,10 @@ public class TestExtensionClient {
 		this.extensionClient = new ExtensionClientImpl();
 	}
 
-	@Test
 	public void testExtensionClientGet(){
 		Assert.assertEquals("To test the maven plugin", this.extensionClient.get(new HashMap<>()));
 	}
 
-	@Test
 	public void testExtensionClientPut(){
 
 		final Map<String, String> params = new HashMap<>();
@@ -40,7 +37,6 @@ public class TestExtensionClient {
 		Assert.assertEquals("/test/junit.json", url);
 	}
 
-	@Test
 	public void testExtensionClientDelete(){
 
 		Assert.assertEquals("sub test function", this.extensionClient.delete(new HashMap<>()));
