@@ -34,7 +34,7 @@ public class TestExtensionClient {
 		params.put("url", "/test/junit.json");
 
 		final Map<String, Object> payload = new HashMap<>();
-		payload.put("id", 1000);
+		payload.put("id", "1000");
 		payload.put("name", "Sanju Thomas");
 		final String url = (String) this.extensionClient.put(params, payload);
 		Assert.assertEquals("/test/junit.json", url);
