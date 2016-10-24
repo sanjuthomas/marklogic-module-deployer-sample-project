@@ -30,6 +30,7 @@ public class ExtensionClientImpl extends ResourceManager implements ExtensionCli
 	}
 
 
+	@Override
 	public Object get(final Map<String, String> params) {
 		return this.getServices().get(this.getRequestParams(params), new StringHandle()).get();
 	}
@@ -44,23 +45,26 @@ public class ExtensionClientImpl extends ResourceManager implements ExtensionCli
 	}
 
 
-	public Object post(final Map<String, String> params) {
-		return this.getServices().post( new RequestParameters(), this.getHandle(params), new StringHandle()).get();
+	@Override
+	public Object post(final Map<String, String> params, final Map<String, Object> payload) {
+		return this.getServices().post( this.getRequestParams(params), this.getHandle(payload), new StringHandle()).get();
 	}
 
 
-	public Object put(final Map<String, String> params) {
-		return this.getServices().put( new RequestParameters(), this.getHandle(params), new StringHandle()).get();
+	@Override
+	public Object put(final Map<String, String> params, final Map<String, Object> payload) {
+		return this.getServices().put( this.getRequestParams(params), this.getHandle(payload), new StringHandle()).get();
 	}
 
 
-	private JacksonHandle getHandle(final Map<String, String> params) {
+	private JacksonHandle getHandle(final Map<String, Object> params) {
 		final JacksonHandle jacksonHandle = new JacksonHandle();
 		jacksonHandle.set(mapper.convertValue(params, JsonNode.class));
 		return jacksonHandle;
 	}
 
 
+	@Override
 	public Object delete(final Map<String, String> params) {
 		return this.getServices().delete(this.getRequestParams(params), new StringHandle()).get();
 	}

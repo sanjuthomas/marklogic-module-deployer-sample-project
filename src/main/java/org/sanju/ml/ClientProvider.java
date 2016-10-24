@@ -15,7 +15,7 @@ public class ClientProvider {
 	private static final int port = 15000;
 	private static DatabaseClient databaseClient = null;
 
-	//test-maven-plugin-user should have "rest-extension-user" and "rest-reader" roles.
+	//test-maven-plugin-user should have "rest-extension-user", "rest-writer", and "rest-reader" roles.
 
 	public static DatabaseClient getClient(){
 

@@ -1,6 +1,7 @@
 package org.sanju.rest.extension.client;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -24,5 +25,18 @@ public class TestExtensionClient {
 	@Test
 	public void testExtensionClientGet(){
 		Assert.assertEquals("To test the maven plugin", this.extensionClient.get(new HashMap<>()));
+	}
+
+	@Test
+	public void testExtensionClientPut(){
+
+		final Map<String, String> params = new HashMap<>();
+		params.put("url", "/test/junit.json");
+
+		final Map<String, Object> payload = new HashMap<>();
+		payload.put("id", 1000);
+		payload.put("name", "Sanju Thomas");
+		final String url = (String) this.extensionClient.put(params, payload);
+		Assert.assertEquals("/test/junit.json", url);
 	}
 }
