@@ -23,6 +23,7 @@ public class TestQueryClient {
 
 	@Test
 	public void shouldFindById(){
+		Assert.assertEquals("from transform", this.queryClient.findById("1000").get("injected").textValue());
 		Assert.assertEquals("/test/junit.json", this.queryClient.findById("1000").get("results").get(0).get("uri").textValue());
 	}
 
