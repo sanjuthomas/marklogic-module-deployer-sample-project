@@ -39,4 +39,10 @@ public class TestExtensionClient {
 		final String url = (String) this.extensionClient.put(params, payload);
 		Assert.assertEquals("/test/junit.json", url);
 	}
+
+	@Test
+	public void testExtensionClientDelete(){
+
+		Assert.assertEquals("sub test function", this.extensionClient.delete(new HashMap<>()));
+	}
 }

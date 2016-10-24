@@ -1,3 +1,5 @@
+var lib = require("/ext/sub/one-test-lib.sjs");
+
 function get(context, param){
 	return "To test the maven plugin";
 }
@@ -13,7 +15,7 @@ function put(context, params, input) {
 };
 
 function deleteFunction(context, params) {
-  // return at most one document node
+  return lib.subTestFunction();
 };
 
 exports.GET = get;
