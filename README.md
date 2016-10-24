@@ -30,3 +30,5 @@ add the following to your pom.xml and create [ml-server-config.properties] (http
   </build>
   
 ````
+
+By default, the MarkLogic server side artifacts get deployed into MarkLogic module database in the install phase of the maven build. You may change that in the phase tag in the plugin.
